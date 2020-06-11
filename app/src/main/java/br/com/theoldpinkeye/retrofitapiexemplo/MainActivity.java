@@ -1,9 +1,9 @@
 package br.com.theoldpinkeye.retrofitapiexemplo;
 
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 import br.com.theoldpinkeye.retrofitapiexemplo.databinding.ActivityMainBinding;
 import br.com.theoldpinkeye.retrofitapiexemplo.model.GithubModel;

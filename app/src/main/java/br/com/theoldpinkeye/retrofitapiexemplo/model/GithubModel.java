@@ -23,13 +23,13 @@ public class GithubModel {
 
   public void getUser(String username) {
 
-    Call call = git.getUser(username);
+    Call<User> call = git.getUser(username);
     call.enqueue(new Callback<User>() {
       @Override
       public void onResponse(Call<User> call, Response<User> response) {
-        User model = response.body();
+        User user = response.body();
 
-        if (model == null) {
+        if (user == null) {
           //404
           ResponseBody responseBody = response.errorBody();
           if (responseBody != null) {
@@ -43,8 +43,8 @@ public class GithubModel {
           }
         } else {
           //200
-          viewModel.setText("Github Name: " + model.getName() + "\nWebsite: " + model.getBlog()
-              + "\nCompany Name: " + model.getCompany());
+          viewModel.setText("Github Username: " + user.getName() + "\nWebsite: " + user.getBlog()
+              + "\nCompany Name: " + user.getCompany());
         }
         viewModel.setPb(false);
       }
